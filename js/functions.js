@@ -44,6 +44,7 @@ function countdownHandler() {
     } else {
         // Quando arriviamo a -1, fermiamo il timer nelle Web API
         clearInterval(intervalId);
+        svuotaInput(); // Evoco la funzione 
         console.log('Timer Terminato');
     }
 
@@ -58,4 +59,11 @@ function svuotaInput() {
         input.value = ''; // Svuota la casella
     });
     console.log("Caselle liberate! Inserisci i numeri eletti");
+    // Comportamento fase 2 
+    // Cambio testo
+    // switch dei bottoni
+    countdownElem.innerText = `Inserisci i numeri`;
+    istruzioni.innerText = '';
+    btnConferma.classList.add('d-none');
+    btnRisposta.classList.remove('d-none');
 }
