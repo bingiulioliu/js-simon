@@ -67,3 +67,27 @@ function svuotaInput() {
     btnConferma.classList.add('d-none');
     btnRisposta.classList.remove('d-none');
 }
+
+function confrontoNumeri() {
+    numeriScelti.length = 0;
+    inputs.forEach(input => {
+        // prendo i numeri e li pusho
+        const valoreUtente = Number(input.value);
+        if (!isNaN(valoreUtente)) {
+            numeriScelti.push(valoreUtente);
+        }
+    });
+    
+    console.log(`Hai inserito i seguenti numeri ${numeriScelti}`);
+
+    // Confronto i due array
+    const numeriIndovinati = [];
+    numeriScelti.forEach(numero => {
+        if (numeriEstratti.includes(numero)) {
+            numeriIndovinati.push(numero);
+        }
+    // Risultato
+    istruzioni.innerText = `Hai indovinato ${numeriIndovinati.length} numeri: (${numeriIndovinati.join(', ')})`;
+    })
+}
+    

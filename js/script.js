@@ -21,9 +21,13 @@ let intervalId;
 const countdownElem = document.querySelector('#countdown');
 let countdownValue = 30;
 
+// Array per immagazzinare i numeri inseriti dall'utente
+const numeriScelti = [];
 
+const numeriIndovinati = [];
 
 // Eventi
+// Bottone start
 btnLetsPlay.addEventListener('click', btnInit);
 
 // Interrompo in anticipo il timer e vado avanti
@@ -31,4 +35,11 @@ btnConferma.addEventListener('click', (event) => {
     event.preventDefault(); // Impedisce il ricaricamento della pagina
     clearInterval(intervalId); // Ferma il timer
     svuotaInput(); // Evoco la funzione clear
+});
+
+// Bottone conferma risposte
+btnRisposta.addEventListener('click', (event) => {
+    event.preventDefault();
+    confrontoNumeri();
+    
 });
