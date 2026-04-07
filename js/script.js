@@ -24,3 +24,4 @@ let countdownValue = 30;
 // Eventi
 btnLetsPlay.addEventListener('click', btnInit);
 
+btnConferma.addEventListener('click', svuotaInput);

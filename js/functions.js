@@ -50,3 +50,12 @@ function countdownHandler() {
     // Mostro il contdown nel paragrafo
     countdownElem.innerText = countdownValue;
 }
+
+
+// Funzione per svuotare gli input allo scadere del countdown o alla pressione di Conferma
+function svuotaInput() {
+    inputs.forEach(input => {
+        input.value = ''; // Svuota la casella
+    });
+    console.log("Caselle liberate! Inserisci i numeri eletti");
+}
