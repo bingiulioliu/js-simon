@@ -1,3 +1,5 @@
+'use strict'
+
 // Funzione per:
 // mostrare il form  
 // nascondere il bottone di inizializzazione
@@ -23,6 +25,28 @@ function btnInit() {
         input.value = numero;
         console.log(numeriEstratti);
     });
+    intervalId = setInterval(countdownHandler, 1000);
+    countdownElem.innerText = countdownValue;
 }
 
+// Funzione per:
+// Inserire negli input i 5 numeri
+// Clear al Timeout di 30 sec o click tasto Conferma (togliere il suo comportamento di defaul)
+// Mostra i numeri inseriti correttamente
+// BONUS: validazione 
+function countdownHandler() {
+    // Decrementiamo il valore ad ogni ciclo
+    countdownValue--;
 
+    if (countdownValue >= 0) {
+        // Finché siamo sopra o a zero, stampiamo il valore
+        console.log(countdownValue);
+    } else {
+        // Quando arriviamo a -1, fermiamo il timer nelle Web API
+        clearInterval(intervalId);
+        console.log('Timer Terminato');
+    }
+
+    // Mostro il contdown nel paragrafo
+    countdownElem.innerText = countdownValue;
+}

@@ -1,5 +1,7 @@
+'use strict'
+
 // Bottone per iniziare a giocare:
-// Rimuovere classe d-none e nascondere il bottone
+// Rimuovere classe d-none al form e nascondere il bottone
 const btnLetsPlay = document.querySelector('#letsPlay');
 const formGioco = document.querySelector('#answers-form');
 
@@ -12,5 +14,13 @@ const btnConferma = document.querySelector('#btnConferma');
 // Per registrare i numeri estratti
 const numeriEstratti = [];
 
+// Variabile per countdown
+let intervalId;
+const countdownElem = document.querySelector('#countdown');
+let countdownValue = 30;
+
+
+
+// Eventi
 btnLetsPlay.addEventListener('click', btnInit);
 
